@@ -1,0 +1,51 @@
+@import "variables.scss";
+
+@mixin dynamic_property($property, $where, $value) {
+	@if $where == "t" {
+		#{$property}-top : $value;
+	} @else if $where == "r" {
+		#{$property}-right : $value;
+	} @else if $where == "b" {
+		#{$property}-bottom : $value;
+	} @else if $where == "l" {
+		#{$property}-left : $value;
+	} @else if $where == "tb" {
+		#{$property}-top : $value;
+		#{$property}-bottom : $value;
+	} @else if $where == "rl" {
+		#{$property}-right : $value;
+		#{$property}-left : $value;
+	} @else if $where == "trbl" {
+		#{$property}-top : $value;
+		#{$property}-bottom : $value;
+		#{$property}-right : $value;
+		#{$property}-left : $value;
+	}
+}
+
+$sizes: ("small", "medium", "large");
+$directions: ("t", "r", "b", "l", "tb", "lr", "trbl");
+
+@mixin make_properties($property, $value:"") {
+	@for $i_sizes from 0 to length($sizes) {
+		@for $i_dirs from 0 to length($directions) {
+			.#{unquote(nth($sizes, $i_sizes+1))}-#{$property}-#{unquote(nth($directions, $i_dirs+1))} {
+				@if nth($sizes, $i_sizes+1) == "small" {
+					$value: $large;
+					@include dynamic_property($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+				} @else if nth($sizes, $i_sizes+1) == "medium" {
+					$value: $medium;
+					@include dynamic_property($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+				} @else if nth($sizes, $i_sizes+1) == "large" {
+					$value: $small;
+					@include dynamic_property($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+				}
+			}
+		}
+	}
+}
+
+/* ---------- Margins ---------- */
+@include make_properties(margin);
+/* ---------- Paddings ---------- */
+@include make_properties(padding);

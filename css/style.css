@@ -1,39 +1,85 @@
 /* ---------- Margins ---------- */
 .small-margin-t { margin-top: 50px; }
+
 .small-margin-r { margin-right: 50px; }
+
 .small-margin-b { margin-bottom: 50px; }
+
 .small-margin-l { margin-left: 50px; }
+
 .small-margin-tb { margin-top: 50px; margin-bottom: 50px; }
+
+.small-margin-rl { margin-right: 50px; margin-left: 50px; }
+
 .small-margin-trbl { margin-top: 50px; margin-bottom: 50px; margin-right: 50px; margin-left: 50px; }
+
 .medium-margin-t { margin-top: 25px; }
+
 .medium-margin-r { margin-right: 25px; }
+
 .medium-margin-b { margin-bottom: 25px; }
+
 .medium-margin-l { margin-left: 25px; }
+
 .medium-margin-tb { margin-top: 25px; margin-bottom: 25px; }
+
+.medium-margin-rl { margin-right: 25px; margin-left: 25px; }
+
 .medium-margin-trbl { margin-top: 25px; margin-bottom: 25px; margin-right: 25px; margin-left: 25px; }
+
 .large-margin-t { margin-top: 10px; }
+
 .large-margin-r { margin-right: 10px; }
+
 .large-margin-b { margin-bottom: 10px; }
+
 .large-margin-l { margin-left: 10px; }
+
 .large-margin-tb { margin-top: 10px; margin-bottom: 10px; }
+
+.large-margin-rl { margin-right: 10px; margin-left: 10px; }
+
 .large-margin-trbl { margin-top: 10px; margin-bottom: 10px; margin-right: 10px; margin-left: 10px; }
 
 /* ---------- Paddings ---------- */
 .small-padding-t { padding-top: 50px; }
+
 .small-padding-r { padding-right: 50px; }
+
 .small-padding-b { padding-bottom: 50px; }
+
 .small-padding-l { padding-left: 50px; }
+
 .small-padding-tb { padding-top: 50px; padding-bottom: 50px; }
+
+.small-padding-rl { padding-right: 50px; padding-left: 50px; }
+
 .small-padding-trbl { padding-top: 50px; padding-bottom: 50px; padding-right: 50px; padding-left: 50px; }
+
 .medium-padding-t { padding-top: 25px; }
+
 .medium-padding-r { padding-right: 25px; }
+
 .medium-padding-b { padding-bottom: 25px; }
+
 .medium-padding-l { padding-left: 25px; }
+
 .medium-padding-tb { padding-top: 25px; padding-bottom: 25px; }
+
+.medium-padding-rl { padding-right: 25px; padding-left: 25px; }
+
 .medium-padding-trbl { padding-top: 25px; padding-bottom: 25px; padding-right: 25px; padding-left: 25px; }
+
 .large-padding-t { padding-top: 10px; }
+
 .large-padding-r { padding-right: 10px; }
+
 .large-padding-b { padding-bottom: 10px; }
+
 .large-padding-l { padding-left: 10px; }
+
 .large-padding-tb { padding-top: 10px; padding-bottom: 10px; }
+
+.large-padding-rl { padding-right: 10px; padding-left: 10px; }
+
 .large-padding-trbl { padding-top: 10px; padding-bottom: 10px; padding-right: 10px; padding-left: 10px; }

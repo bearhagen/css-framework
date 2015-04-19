@@ -24,7 +24,7 @@
 }
 
 $sizes: ("small", "medium", "large");
-$directions: ("t", "r", "b", "l", "tb", "lr", "trbl");
+$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");
 
 @mixin make_properties($property, $value:"") {
 	@for $i_sizes from 0 to length($sizes) {

@@ -1,0 +1,21 @@
+$color-primary: 		#FFA00A;
+$color-primary-light: 	#FFBE57;
+$color-secondary: 		#1457A7;
+$color-secondary-dark: 	#001F3F;
+$color-white: 			#FFFFFF;
+$color-grey: 			#f0f0f0;
+$color-black: 			#1B1B1B;
+$color-warning:			#E4FF0A;
+$color-alert: 			#FF260A;
+$color-success: 		#0AFFA0;
+
+$large:		50px;
+$medium:	25px;
+$small:		10px;
+
+@mixin transition($time: 1s, $property: all, $easing: ease-in-out) {
+	-webkit-transition:  $property $time $easing;
+	-moz-transition: 	 $property $time $easing;
+	-o-transition: 		 $property $time $easing;
+	transition: 		 $property $time $easing;
+}

@@ -1,0 +1,111 @@
+/* ---------- Navigation ---------- */
+
+.nav {
+	> {
+		a, label, input, div > a {
+			cursor: pointer;
+			color: $color-black;
+			text-decoration: none;
+			background-color: transparent;
+			@include transition(0.5s);
+
+			&:hover {
+				color: $color-white;
+				background-color: $color-primary;
+				outline-color: $color-primary;
+				@include transition(0.1s);
+				@include transition(0.25s, outline-offset);
+			}
+		}
+	}
+
+	&-h {
+		float: right;
+
+		a, label, input {
+			display: inline-block;
+			min-width: $huge;
+			text-align: center;
+			line-height: $huge;
+		}
+
+		&-container {
+			.signature .signature {
+				&-advanced {
+					display: inline-block;
+					float: left;
+					width: 250px;
+					height: 100px;
+				}
+			}
+		}
+	}
+
+	&-v {
+		a, label, input {
+			padding-left: $medium;
+			display: block;
+			text-align: left;
+			line-height: $large;
+		}
+
+		&-container {
+			@extend .top, .left;
+			z-index: 10;
+			overflow-y: auto;
+			display: block;
+
+			.signature {
+				@extend .o-10;
+				@include transition(0.5s, opacity);
+
+				&:hover, &:focus {
+					@extend .o-5;
+					@include transition( 0.1s, opacity);
+				}
+			}
+
+			.signature.signature {
+				&-simple img {
+					@extend .p-medium-rl;
+				}
+			}
+		}
+
+		&-responsive.toggle-content {
+			display: block;
+		}
+
+		&-opener, &-opener-responsive {
+			@extend .absolute, .top, .left, .toggle-text-menu-close, .btn-cta-black;
+			z-index: 11;
+		}
+
+		&-opener-responsive {
+			display: none;
+		}
+
+		> .nav-sub_pages {
+			padding-left: $medium;
+		}
+	}
+	&-signature, &-logo {
+		width: 100%;
+	}
+}
+
+/* Nav logo */
+
+.nav-v-container > .nav-signature.signature-advanced {
+	display: block;
+	@extend .centered;
+	width: 250px;
+	height: 100px;
+	@include transition(0.5s, opacity);
+
+	&:hover,
+	&:focus {
+		@extend .o-5;
+		@include transition(0.1s, opacity);
+	}
+}

@@ -1,0 +1,16 @@
+/* ---------- Colors ---------- */
+
+@mixin make_colors {
+	$colors: (primary $color-primary, secondary $color-secondary, white $color-white, grey $color-grey, black $color-black, warning $color-warning, alert $color-alert, success $color-success);
+	@each $color in $colors {
+		.c-#{nth($color, 1)} {
+			color: nth($color, 2);
+		}
+		
+		.c-#{nth($color, 1)}-bg {
+			background-color: nth($color, 2);
+		}
+	}
+}
+
+@include make_colors;

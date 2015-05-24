@@ -1,0 +1,21 @@
+@mixin transition($time: 1s, $property: all, $easing: cubic-bezier(.4,0,.2,1)) {
+	@if ($property != transform) {
+		-webkit-transition:  $property $time $easing;
+		-moz-transition: 	 $property $time $easing;
+		-o-transition: 		 $property $time $easing;
+		transition: 		 $property $time $easing;
+	} @else {
+		-webkit-transition:  -webkit-+$property $time $easing;
+		-moz-transition: 	 -moz-+$property $time $easing;
+		-o-transition: 		 -o-+$property $time $easing;
+		transition: 		 $property $time $easing;
+	}
+}
+
+@mixin transform($function, $value) {
+	-webkit-transform: 	$function+"("+$value+")";
+	-moz-transform: 	$function+"("+$value+")";
+	-ms-transform: 		$function+"("+$value+")";
+	-o-transform: 		$function+"("+$value+")";
+	transform: 			$function+"("+$value+")";
+}

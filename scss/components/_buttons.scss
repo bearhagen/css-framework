@@ -1,0 +1,54 @@
+/* ---------- Buttons ---------- */
+
+@mixin make_btn($type: normal, $color: $color-black, $color2: $color-black, $color-text: $color-white) {
+	cursor: pointer;
+	padding: $small $medium;
+	border-style: solid;
+	border-width: $tiny/2;
+	text-decoration: none;
+
+	@if $type == "normal" {
+		color: $color;
+		border-color: $color;
+
+		&:hover,
+		&:focus {
+			color: $color-text;
+			background-color: $color;
+		}	
+	}
+
+	@if $type == "cta" {
+		color: $color-text;
+		border-color: $color;
+		background-color: $color;
+
+		&:hover,
+		&:focus {
+			color: $color-text;
+			background-color: $color2;
+			border-color: $color2;
+		}	
+	}
+}
+
+/* color buttons normal */
+.btn-primary {			@include make_btn(normal, $color-primary);}
+.btn-secondary {		@include make_btn(normal, $color-secondary);}
+.btn-white {			@include make_btn(normal, $color-white, "", $color-black);}
+.btn-black {			@include make_btn(normal, $color-black);}
+.btn-grey {				@include make_btn(normal, $color-grey, "", $color-black);}
+/* color buttons call-to-action */
+.btn-cta-primary {		@include make_btn(cta, $color-primary);}
+.btn-cta-secondary {	@include make_btn(cta, $color-secondary);}
+.btn-cta-white {		@include make_btn(cta, $color-white);}
+.btn-cta-black {		@include make_btn(cta, $color-black);}
+.btn-cta-grey {			@include make_btn(cta, $color-grey);}
+/* button types normal */
+.btn-warning {			@include make_btn(normal, $color-warning);}
+.btn-alert {			@include make_btn(normal, $color-alert);}
+.btn-success {			@include make_btn(normal, $color-success, "", $color-black);}
+/* button types call-to-action */
+.btn-cta-warning {		@include make_btn(cta, $color-warning);}
+.btn-cta-alert {		@include make_btn(cta, $color-alert);}
+.btn-cta-success {		@include make_btn(cta, $color-success);}

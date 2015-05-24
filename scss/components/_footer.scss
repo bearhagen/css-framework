@@ -1,0 +1,19 @@
+/* ---------- Footer ---------- */
+
+.footer {
+	position: absolute;
+	height: $large;
+	bottom: 0;
+	color: $color-white;
+	background-color: $color-black;
+
+	> a {
+		color: $color-white;
+		text-decoration: none;
+
+		&:hover {
+			color: $color-primary;
+			text-decoration: underline;
+		}
+	}
+}

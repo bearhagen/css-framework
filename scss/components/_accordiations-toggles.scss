@@ -1,0 +1,40 @@
+/* ---------- Accordiations & Toggles ---------- */
+
+.toggle {
+	visibility: hidden;
+	@extend .o-0;
+	display: none !important;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+
+	&:checked {
+
+		& ~ {
+			.toggle-label {
+				color: $color-white;
+				background-color: $color-black;
+
+				&.toggle-text-open-close, &.toggle-text-menu-close {
+					&::after {
+						content: "Close";
+					}
+				}
+	
+			}
+
+			.toggle-content, .toggle-content-hide {
+				display: block !important;
+
+				&.nav-v-responsive {
+					@include transform(translateX, 0%);
+				}
+			}
+		}
+	}
+}
+
+.toggle-content-hide {display: none;}
+
+.toggle-text-open-close::after {content: "Open";}
+.toggle-text-menu-close::after {content: "Menu";}

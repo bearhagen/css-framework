@@ -1,0 +1,37 @@
+/* ---------- Alignments ---------- */
+
+.centered,
+.centered-absolute,
+.centered-block {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.centered-absolute {
+	left: 0;
+	right: 0;
+}
+
+.centered-block {display: block;}
+.centered-text {text-align: center;}
+
+.centered-vertically {
+	position: absolute;
+	top: 50%;
+	@include transform(translateY, -50%);
+}
+
+/* Push from x direction */
+$directions: (top, right, bottom, left);
+@for $i from 1 through length($directions) {
+	.push-#{str-slice(nth($directions, $i), 1, 1)} {
+		margin-#{nth($directions, $i)}: auto;
+	}
+}
+
+/* Set x position to 0 */
+@for $i from 1 through length($directions) {
+	.#{nth($directions, $i)} {
+		#{nth($directions, $i)}: 0;
+	}
+}

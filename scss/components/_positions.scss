@@ -1,0 +1,8 @@
+/* ---------- Positions ---------- */
+
+$positions: (relative, absolute, fixed, static);
+@for $i from 1 through length($positions) {
+	.#{nth($positions, $i)} {
+		position: nth($positions, $i);
+	}
+}

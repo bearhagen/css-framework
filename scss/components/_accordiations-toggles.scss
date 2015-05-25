@@ -10,8 +10,7 @@
 
 	&:checked {
 
-		& ~ {
-			.toggle-label {
+			& + li .toggle-label {
 				color: $color-white;
 				background-color: $color-black;
 
@@ -23,14 +22,9 @@
 	
 			}
 
-			.toggle-content, .toggle-content-hide {
+			& ~ .toggle-content, & ~ .toggle-content-hide {
 				display: block !important;
-
-				&.nav-v-responsive {
-					@include transform(translateX, 0%);
-				}
 			}
-		}
 	}
 }
 

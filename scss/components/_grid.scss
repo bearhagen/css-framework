@@ -1,0 +1,39 @@
+/* ---------- Grid ---------- */
+
+.col {
+	float: left;
+
+	&-container {
+		@extend .clearfix;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.col {
+		@for $i from 1 through 10 {
+			&.d#{$i}0 {
+				width: $i*10%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1100px)  {
+	.col {
+		@for $i from 1 through 10 {
+			&.t#{$i}0 {
+				width: $i*10%;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px)  {
+	.col {
+		@for $i from 1 through 10 {
+			&.m#{$i}0 {
+				width: $i*10%;
+			}
+		}
+	}
+}

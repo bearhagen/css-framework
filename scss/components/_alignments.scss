@@ -21,6 +21,9 @@
 	@include transform(translateY, -50%);
 }
 
+.a-left {text-align: left;}
+.a-right {text-align: right;}
+
 /* Push from x direction */
 $directions: (top, right, bottom, left);
 @for $i from 1 through length($directions) {

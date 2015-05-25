@@ -1,8 +1,8 @@
 /* ---------- Navigation ---------- */
 
 .nav {
-	> {
-		a, label, input, div > a {
+	> ul {
+		li a, li label {
 			cursor: pointer;
 			color: $color-black;
 			text-decoration: none;
@@ -22,7 +22,7 @@
 	&-h {
 		float: right;
 
-		a, label, input {
+		li {
 			display: inline-block;
 			min-width: $huge;
 			text-align: center;
@@ -42,7 +42,12 @@
 	}
 
 	&-v {
-		a, label, input {
+
+		> ul > ul > li a {
+			@extend .p-large-l;
+		}
+
+		a, label {
 			padding-left: $medium;
 			display: block;
 			text-align: left;
@@ -92,6 +97,10 @@
 	&-signature, &-logo {
 		width: 100%;
 	}
+}
+
+.toggle:checked ~ .toggle-content, .toggle-content-hide.nav-v-responsive {
+	@include transform(translateX, 0%);
 }
 
 /* Nav logo */

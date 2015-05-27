@@ -1,0 +1,89 @@
+/* ---------- Typography ---------- */
+
+strong, b, bold {
+	font-weight: 700;
+}
+
+$font-sizes: (6, 3.5, 3, 2.5, 2, 1.5);
+@for $i from 1 through length($font-sizes) {
+	h#{$i} {
+		font-size: nth($font-sizes, $i)+em;
+		@extend bold;
+	}
+}
+
+p {
+	font-size: 1em;
+	line-height: 2;
+}
+
+.code {
+	&-all {
+		font-family: monospace;
+	}
+	
+	&-text {
+		p, li, dd {
+			@extend .code-all;
+		}
+		ul, ol, dl {
+			@extend .p-small-tb;
+		}
+
+		&-light, &-dark {
+			@extend .code-text;
+
+			ul, ol, dl {
+				outline-style: dashed;
+				outline-width: $micro;
+				outline-offset: $small;
+				outline-color: transparent;
+				@include transition(0.25s, outline-offset);
+
+				&:hover {
+					outline-offset: -$small;
+				}
+			}
+		}
+
+		&-light {
+			ul, ol, dl {
+				color: $color-black;
+				background-color: $color-grey;
+
+				&:hover {
+					outline-color: $color-secondary;
+				}
+			}
+		}
+
+		&-dark {
+			ul, ol, dl {
+				color: $color-white;
+				background-color: $color-black;
+
+				&:hover {
+					outline-color: $color-primary;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	$font-sizes: (5, 3.5, 2, 1.75, 1.5, 1.25);
+	@for $i from 1 through length($font-sizes) {
+		h#{$i} {
+			font-size: nth($font-sizes, $i)+em;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	$font-sizes: (3, 2.5, 2, 1.75, 1.5, 1.25);
+	@for $i from 1 through length($font-sizes) {
+		h#{$i} {
+			font-size: nth($font-sizes, $i)+em;
+		}
+	}
+}

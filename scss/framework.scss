@@ -51,26 +51,9 @@ a {
 }
 
 ::selection, ::-moz-selection {
-	color: $color-white;
+	color: $color-primary;
 	background: $color-black;
 	text-shadow: none;
-}
-
-strong, b, bold {
-	font-weight: 700;
-}
-
-$font-sizes: (7, 6, 5, 4, 3, 2);
-@for $i from 1 through length($font-sizes) {
-	h#{$i} {
-		font-size: nth($font-sizes, $i)+em;
-		@extend bold;
-	}
-}
-
-p {
-	font-size: 1em;
-	line-height: 160%;
 }
 
 img {
@@ -98,27 +81,20 @@ img {
 @import 'components/_colors.scss';
 @import 'components/_footer.scss';
 @import 'components/_grid.scss';
+@import 'components/_lists.scss';
 @import 'components/_logo.scss';
 @import 'components/_margins-paddings.scss';
 @import 'components/_navigations.scss';
 @import 'components/_opacities.scss';
 @import 'components/_positions.scss';
 @import 'components/_sizes.scss';
+@import 'components/_typography.scss';
 
 @media screen and (max-width: 1100px) {
-	.nav-v-responsive.toggle-content {
-		width: 50%;
-		@include transform(translateX, -100%);
-		@include transition(0.3s, transform);
-	}
-
-	.nav-v-opener-responsive {
-		display: block;
-	}
 }
 
 @media screen and (max-width: 480px)  {
-	.nav-v-responsive.toggle-content {
-		width: 100%;
-	}
+}
+
+@media print and (max-width: 1100px) {
 }

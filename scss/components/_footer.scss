@@ -1,11 +1,22 @@
 /* ---------- Footer ---------- */
 
 .footer {
-	position: absolute;
-	height: $large;
-	bottom: 0;
-	color: $color-white;
-	background-color: $color-black;
+
+		&.footer-one-line, &.footer-pushed {
+			@extend .w-100, .p-large-trbl, .centered-text;
+			height: $large;
+			color: $color-white;
+			background-color: $color-black;
+		}
+
+		.footer-one-line {
+			@extend .relative;
+		}
+
+		.footer-pushed {
+			@extend .absolute;
+			bottom: 0;
+		}
 
 	> a {
 		color: $color-white;
@@ -17,3 +28,4 @@
 		}
 	}
 }
+

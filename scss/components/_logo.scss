@@ -20,3 +20,14 @@
 
 .logo-advanced {background-image: url("../images/default.png");}
 .signature-advanced {background-image: url("../images/default.png");}
+
+@media print and (max-width: 1100px) {
+	.nav, .nav-v, .nav-v-container, .nav-h, .nav-h-container {
+			.logo, .logo-simple, .logo-advanced, .signature, .signature-simple, .signature-advanced {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 250px;
+		}
+	}
+}

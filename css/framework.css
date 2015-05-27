@@ -89,11 +89,11 @@ img {
   max-width: 100%;
 }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before, .col-container:before, .clearfix:after, .col-container:after {
   content: " ";
   display: table;
 }
-.clearfix:after {
+.clearfix:after, .col-container:after {
   clear: both;
 }
 
@@ -109,22 +109,15 @@ img {
   height: 0px;
   overflow: hidden;
 }
-.toggle:checked ~ .toggle-label {
+.toggle:checked + li .toggle-label {
   color: #FFFFFF;
   background-color: #1B1B1B;
 }
-.toggle:checked ~ .toggle-label.toggle-text-open-close::after, .toggle:checked ~ .toggle-label.toggle-text-menu-close::after, .toggle:checked ~ .toggle-label.nav-v-opener::after, .toggle:checked ~ .toggle-label.nav-v-opener-responsive::after {
+.toggle:checked + li .toggle-label.toggle-text-open-close::after, .toggle:checked + li .toggle-label.toggle-text-menu-close::after, .toggle:checked + li .toggle-label.nav-v-opener::after, .toggle:checked + li .toggle-label.nav-v-opener-responsive::after {
   content: "Close";
 }
 .toggle:checked ~ .toggle-content, .toggle:checked ~ .toggle-content-hide {
   display: block !important;
-}
-.toggle:checked ~ .toggle-content.nav-v-responsive, .toggle:checked ~ .toggle-content-hide.nav-v-responsive {
-  -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
-  transform: translateX(0%);
 }
 
 .toggle-content-hide {
@@ -168,6 +161,14 @@ img {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.a-left {
+  text-align: left;
+}
+
+.a-right {
+  text-align: right;
 }
 
 /* Push from x direction */
@@ -531,6 +532,107 @@ img {
   text-decoration: underline;
 }
 
+/* ---------- Grid ---------- */
+.col {
+  float: left;
+}
+
+@media screen and (min-width: 1100px) {
+  .col.d10 {
+    width: 10%;
+  }
+  .col.d20 {
+    width: 20%;
+  }
+  .col.d30 {
+    width: 30%;
+  }
+  .col.d40 {
+    width: 40%;
+  }
+  .col.d50 {
+    width: 50%;
+  }
+  .col.d60 {
+    width: 60%;
+  }
+  .col.d70 {
+    width: 70%;
+  }
+  .col.d80 {
+    width: 80%;
+  }
+  .col.d90 {
+    width: 90%;
+  }
+  .col.d100 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .col.t10 {
+    width: 10%;
+  }
+  .col.t20 {
+    width: 20%;
+  }
+  .col.t30 {
+    width: 30%;
+  }
+  .col.t40 {
+    width: 40%;
+  }
+  .col.t50 {
+    width: 50%;
+  }
+  .col.t60 {
+    width: 60%;
+  }
+  .col.t70 {
+    width: 70%;
+  }
+  .col.t80 {
+    width: 80%;
+  }
+  .col.t90 {
+    width: 90%;
+  }
+  .col.t100 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col.m10 {
+    width: 10%;
+  }
+  .col.m20 {
+    width: 20%;
+  }
+  .col.m30 {
+    width: 30%;
+  }
+  .col.m40 {
+    width: 40%;
+  }
+  .col.m50 {
+    width: 50%;
+  }
+  .col.m60 {
+    width: 60%;
+  }
+  .col.m70 {
+    width: 70%;
+  }
+  .col.m80 {
+    width: 80%;
+  }
+  .col.m90 {
+    width: 90%;
+  }
+  .col.m100 {
+    width: 100%;
+  }
+}
 /* ---------- Logo ---------- */
 .logo-advanced,
 .signature-advanced {
@@ -736,7 +838,7 @@ img {
   padding-bottom: 50px;
 }
 
-.p-large-l {
+.p-large-l, .nav-v > ul > ul > li a {
   padding-left: 50px;
 }
 
@@ -758,7 +860,7 @@ img {
 }
 
 /* ---------- Navigation ---------- */
-.nav > a, .nav > label, .nav > input, .nav > div > a {
+.nav > ul li a, .nav > ul li label {
   cursor: pointer;
   color: #1B1B1B;
   text-decoration: none;
@@ -768,7 +870,7 @@ img {
   -o-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.nav > a:hover, .nav > label:hover, .nav > input:hover, .nav > div > a:hover {
+.nav > ul li a:hover, .nav > ul li label:hover {
   color: #FFFFFF;
   background-color: #FFA00A;
   outline-color: #FFA00A;
@@ -784,7 +886,7 @@ img {
 .nav-h {
   float: right;
 }
-.nav-h a, .nav-h label, .nav-h input {
+.nav-h li {
   display: inline-block;
   min-width: 100px;
   text-align: center;
@@ -796,7 +898,7 @@ img {
   width: 250px;
   height: 100px;
 }
-.nav-v a, .nav-v label, .nav-v input {
+.nav-v a, .nav-v label {
   padding-left: 25px;
   display: block;
   text-align: left;
@@ -833,6 +935,14 @@ img {
 }
 .nav-signature, .nav-logo {
   width: 100%;
+}
+
+.toggle:checked ~ .toggle-content, .toggle-content-hide.nav-v-responsive {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
 }
 
 /* Nav logo */

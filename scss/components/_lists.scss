@@ -1,0 +1,73 @@
+/* ---------- Lists ---------- */
+
+.list {
+	line-height: 160%;
+
+	dt {
+		@extend bold, .m-small-t;
+
+		&:after {
+			content: ":";
+		}
+	}
+
+	li, dd {
+		display: list-item;
+	}
+
+	&-bulleted {
+		@extend .list;
+		list-style: disc;
+
+		&-pushed {
+			@extend .list-bulleted;
+		}
+	}
+
+	&s {
+		&-bulleted {
+			ul, dl {
+				@extend .list-bulleted, .m-large-tb;		
+		
+				&:first-child {
+					margin-top: 0;
+				}
+		
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			&-pushed {
+				@extend .lists-bulleted;
+
+				ul, dl {
+					@extend .list-bulleted-pushed
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.list {
+		&-bulleted { &-pushed { padding-left: $large; }}
+		&s { &-bulleted { &-pushed { ul, dl { padding-left: $large; }}}}
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.list {
+		&-bulleted { &-pushed { padding-left: $medium; }}
+		&s { &-bulleted { &-pushed { ul, dl { padding-left: $medium; }}}}
+	}
+}
+
+/*
+@media screen and (max-width: 480px)  {
+	.list {
+		&-bulleted { &-pushed { padding-left: $small; }}
+		&s { &-bulleted { &-pushed { ul, dl { padding-left: $small; }}}}
+	}
+}
+*/

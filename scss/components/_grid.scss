@@ -3,42 +3,45 @@
 .col {
 	
 	&s {
-		> .col {
-			float: left;
+		> .col, & > div, &-container > .col, &-container > div {
+			@extend .f-left;
 		}
 
 		&-container {
-			@extend .cols, .clearfix;
+			@extend .clearfix;
 		}
 	}
 
 }
 
 @media screen and (min-width: 1100px) {
-	.col, .cols {
-		@for $i from 1 through 10 {
-			&.d#{$i}0 {
-				width: $i*10%;
+	.col {
+		@for $i from 1 through 40 {
+			$col-num: str-replace(#{$i*2.5}, '.', '-');
+			&.d#{$col-num} ,&s.d#{$col-num} > div {
+				width: $i*2.5%;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 1100px)  {
-	.col, .cols {
-		@for $i from 1 through 10 {
-			&.t#{$i}0 {
-				width: $i*10%;
+	.col {
+		@for $i from 1 through 40 {
+			$col-num: str-replace(#{$i*2.5}, '.', '-');
+			&.t#{$col-num} ,&s.t#{$col-num} > div {
+				width: $i*2.5%;
 			}
 		}
 	}
 }
 
 @media screen and (max-width: 480px)  {
-	.col, .cols {
-		@for $i from 1 through 10 {
-			&.m#{$i}0 {
-				width: $i*10%;
+	.col {
+		@for $i from 1 through 40 {
+			$col-num: str-replace(#{$i*2.5}, '.', '-');
+			&.m#{$col-num} ,&s.m#{$col-num} > div {
+				width: $i*2.5%;
 			}
 		}
 	}

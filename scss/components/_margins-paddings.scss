@@ -16,34 +16,87 @@
 		#{$property}-right : $value;
 		#{$property}-left : $value;
 	} @else if $where == "trbl" {
-		#{$property}-top : $value;
-		#{$property}-bottom : $value;
-		#{$property}-right : $value;
-		#{$property}-left : $value;
+		#{$property} : $value;
 	}
 }
 
-@mixin make_margins_paddings($property, $value:"") {
-	$sizes: ("small", "medium", "large");
-	$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");
+@media screen and (min-width: 1100px) {
+	@mixin make_margins_paddings($property, $value:"") {
+		$sizes: ("small", "medium", "large");
+		$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");
 
-	@for $i_sizes from 0 to length($sizes) {
-		@for $i_dirs from 0 to length($directions) {
-			.#{str-slice($property, 1, 1)}-#{unquote(nth($sizes, $i_sizes+1))}-#{unquote(nth($directions, $i_dirs+1))} {
-				@if nth($sizes, $i_sizes+1) == "small" {
-					$value: $small;
-					@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
-				} @else if nth($sizes, $i_sizes+1) == "medium" {
-					$value: $medium;
-					@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
-				} @else if nth($sizes, $i_sizes+1) == "large" {
-					$value: $large;
-					@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+		@for $i_sizes from 0 to length($sizes) {
+			@for $i_dirs from 0 to length($directions) {
+				.#{str-slice($property, 1, 1)}-#{unquote(nth($sizes, $i_sizes+1))}-#{unquote(nth($directions, $i_dirs+1))} {
+					@if nth($sizes, $i_sizes+1) == "small" {
+						$value: $small;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "medium" {
+						$value: $medium;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "large" {
+						$value: $large;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					}
 				}
 			}
 		}
 	}
+
+	@include make_margins_paddings(margin);
+	@include make_margins_paddings(padding);
 }
 
-@include make_margins_paddings(margin);
-@include make_margins_paddings(padding);
+@media screen and (max-width: 1100px)  {
+	@mixin make_margins_paddings($property, $value:"") {
+		$sizes: ("small", "medium", "large");
+		$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");
+
+		@for $i_sizes from 0 to length($sizes) {
+			@for $i_dirs from 0 to length($directions) {
+				.#{str-slice($property, 1, 1)}-#{unquote(nth($sizes, $i_sizes+1))}-#{unquote(nth($directions, $i_dirs+1))} {
+					@if nth($sizes, $i_sizes+1) == "small" {
+						$value: $small;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "medium" {
+						$value: $small;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "large" {
+						$value: $medium;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					}
+				}
+			}
+		}
+	}
+
+	@include make_margins_paddings(margin);
+	@include make_margins_paddings(padding);
+}
+
+@media screen and (max-width: 480px)  {
+	@mixin make_margins_paddings($property, $value:"") {
+		$sizes: ("small", "medium", "large");
+		$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");
+
+		@for $i_sizes from 0 to length($sizes) {
+			@for $i_dirs from 0 to length($directions) {
+				.#{str-slice($property, 1, 1)}-#{unquote(nth($sizes, $i_sizes+1))}-#{unquote(nth($directions, $i_dirs+1))} {
+					@if nth($sizes, $i_sizes+1) == "small" {
+						$value: $small;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "medium" {
+						$value: $small;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					} @else if nth($sizes, $i_sizes+1) == "large" {
+						$value: $medium;
+						@include directions($property, #{unquote(nth($directions, $i_dirs+1))}, $value);
+					}
+				}
+			}
+		}
+	}
+
+	@include make_margins_paddings(margin);
+	@include make_margins_paddings(padding);
+}

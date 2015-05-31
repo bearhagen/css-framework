@@ -18,12 +18,16 @@ p {
 }
 
 .code {
+	font-family: monospace;
+	background-color: $color-grey;
+	padding: 2.5px 5px;
+
 	&-all {
 		font-family: monospace;
 	}
 	
 	&-text {
-		p, li, dd {
+		span, p, li, dd {
 			@extend .code-all;
 		}
 		ul, ol, dl {
@@ -33,7 +37,7 @@ p {
 		&-light, &-dark {
 			@extend .code-text;
 
-			ul, ol, dl {
+			ul, ol, dl, p {
 				outline-style: dashed;
 				outline-width: $micro;
 				outline-offset: $small;
@@ -47,7 +51,7 @@ p {
 		}
 
 		&-light {
-			ul, ol, dl {
+			ul, ol, dl, p, span {
 				color: $color-black;
 				background-color: $color-grey;
 
@@ -58,7 +62,7 @@ p {
 		}
 
 		&-dark {
-			ul, ol, dl {
+			ul, ol, dl, p, span {
 				color: $color-white;
 				background-color: $color-black;
 

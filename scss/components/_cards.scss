@@ -1,0 +1,79 @@
+/* ---------- Cards ---------- */
+
+%card {
+	@extend .m-large-tb, .shadow-light;
+}
+
+.card {
+	@for $i from 1 through 6 {
+		h#{$i} {
+			@extend .m-medium-b;
+		}
+	}
+
+	&, &-tiny, &-small, &-medium, &-large, &-max {
+		&-basic {
+			@extend %card;
+		}
+	}
+
+	&-tiny {
+		&-basic {
+			@extend .w-tiny;
+		}
+	}
+
+	&-small {
+		&-basic {
+			@extend .w-small;
+		}
+	}
+
+	&-medium {
+		&-basic {
+			@extend .w-medium;
+		}
+	}
+
+	&-large {
+		&-basic {
+			@extend .w-large;
+		}
+	}
+
+	&-max {
+		&-basic {
+			@extend .w-100;
+		}
+	}
+
+	&-content {
+		@extend .p-large-rl, .p-large-t;
+	}
+
+	&-action {
+		@extend .p-large-rl, .p-large-b, .w-100, .a-right;
+			margin-top: 25px;
+
+		a {
+			color: $color-primary;
+			text-decoration: none;
+			text-transform: uppercase;
+			padding: $small;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+		}
+	}
+}
+
+@media screen and (min-width: 1100px) {
+}
+
+@media screen and (max-width: 1100px)  {
+}
+
+@media screen and (max-width: 480px)  {
+}

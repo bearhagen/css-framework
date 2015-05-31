@@ -7,19 +7,18 @@
 
 /* ---------- General ---------- */
 
-* {
-	box-sizing: inherit;
-	
-	&:before, &:after {
-		box-sizing: inherit;
-	}
-}
-
 html {
 	box-sizing: border-box;
 	position: relative;
 	min-height: 100%;
 }
+
+* {
+	&, &:before, &:after {
+		box-sizing: inherit;
+	}
+}
+
 
 body {
 	color: $color-black;
@@ -35,7 +34,7 @@ select, input, textarea {
 }
 
 a {
-	color: $color-white;
+	color: $color-black;
 
 	&:hover, &:active, &:focus {
 		color: $color-primary;
@@ -75,10 +74,21 @@ img {
 	cursor: pointer;
 }
 
+.shadow {
+	&-light {
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+	}
+	
+	&-heavy {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+	}
+}
+
 @import 'components/_accordiations-toggles.scss';
 @import 'components/_alignments.scss';
 @import 'components/_buttons.scss';
 @import 'components/_colors.scss';
+@import 'components/_cards.scss';
 @import 'components/_footer.scss';
 @import 'components/_grid.scss';
 @import 'components/_lists.scss';

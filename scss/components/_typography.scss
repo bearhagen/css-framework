@@ -21,6 +21,11 @@ p {
 	font-family: monospace;
 	background-color: $color-grey;
 	padding: 2.5px 5px;
+	overflow: hidden;
+
+	&::selection {
+		background: $color-grey;
+	}
 
 	&-all {
 		font-family: monospace;
@@ -56,7 +61,7 @@ p {
 				background-color: $color-grey;
 
 				&:hover {
-					outline-color: $color-secondary;
+					outline-color: $color-accent;
 				}
 			}
 		}

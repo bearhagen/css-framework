@@ -49,9 +49,15 @@ a {
 	transition: none !important;
 }
 
-::selection, ::-moz-selection {
+::selection {
 	color: $color-white;
-	background: $color-black;
+	background: $color-primary;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	color: $color-white;
+	background: $color-primary;
 	text-shadow: none;
 }
 

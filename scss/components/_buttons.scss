@@ -34,13 +34,13 @@
 
 /* color buttons normal */
 .btn-primary {			@include make_btn(normal, $color-primary);}
-.btn-secondary {		@include make_btn(normal, $color-secondary);}
+.btn-accent {		@include make_btn(normal, $color-accent);}
 .btn-white {			@include make_btn(normal, $color-white, "", $color-black);}
 .btn-black {			@include make_btn(normal, $color-black);}
 .btn-grey {				@include make_btn(normal, $color-grey, "", $color-black);}
 /* color buttons call-to-action */
 .btn-cta-primary {		@include make_btn(cta, $color-primary);}
-.btn-cta-secondary {	@include make_btn(cta, $color-secondary);}
+.btn-cta-accent {	@include make_btn(cta, $color-accent);}
 .btn-cta-white {		@include make_btn(cta, $color-white);}
 .btn-cta-black {		@include make_btn(cta, $color-black);}
 .btn-cta-grey {			@include make_btn(cta, $color-grey);}

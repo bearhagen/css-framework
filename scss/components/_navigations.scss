@@ -48,14 +48,14 @@
 		}
 
 		a, label {
-			padding-left: $medium;
+			@extend .p-medium-l;
 			display: block;
 			text-align: left;
 			line-height: $large;
 		}
 
 		&-container {
-			@extend .top, .left;
+			@extend .top, .left, .shadow-light;
 			z-index: 10;
 			overflow-y: auto;
 			display: block;
@@ -91,7 +91,7 @@
 		}
 
 		> .nav-sub_pages {
-			padding-left: $medium;
+			@extend .p-medium-l;
 		}
 	}
 	&-signature, &-logo {

@@ -5,6 +5,7 @@
 	@each $size in $sizes {
 		.w-#{nth($size, 1)} {
 			width: nth($size, 2);
+			max-width: 100%;
 		}
 
 		.h-#{nth($size, 1)} {
@@ -16,6 +17,7 @@
 @for $i from 1 through 10 {
 	.w-#{$i}0 {
 		width: $i*10%;
+		max-width: 100%;
 	}
 }
 

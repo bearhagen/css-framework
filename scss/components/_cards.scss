@@ -2,54 +2,54 @@
 
 %card {
 	@extend .m-large-tb, .shadow-light;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	overflow: hidden;
+}
+
+%card-header-content {
+	@extend .absolute, .bottom, .p-medium-trbl;
+	z-index: 2;
 }
 
 .card {
 	@for $i from 1 through 6 {
-		h#{$i} {
+		&-content > h#{$i} {
 			@extend .m-medium-b;
 		}
 	}
 
-	&, &-tiny, &-small, &-medium, &-large, &-max {
-		&-basic {
-			@extend %card;
-		}
+	&-tiny, &-small, &-medium, &-large, &-max {
+		@extend %card;
 	}
 
-	&-tiny {
-		&-basic {
-			@extend .w-tiny;
-		}
-	}
+	&-tiny { 	@extend .w-tiny; }
+	&-small { 	@extend .w-small; }
+	&-medium { 	@extend .w-medium; }
+	&-large { 	@extend .w-large; }
+	&-max { 	@extend .w-100; }
 
-	&-small {
-		&-basic {
-			@extend .w-small;
-		}
-	}
+	&-header {
+		@extend .relative;
 
-	&-medium {
-		&-basic {
-			@extend .w-medium;
-		}
-	}
+		overflow: hidden;
 
-	&-large {
-		&-basic {
-			@extend .w-large;
-		}
-	}
+		> .card-title {
+			@extend .absolute, .bottom, .p-medium-trbl;
 
-	&-max {
-		&-basic {
+			z-index: 2;
+		}
+
+		> img  {
 			@extend .w-100;
 		}
 	}
 
 	&-content {
 		@extend .p-large-rl, .p-large-t;
+
+		overflow: hidden;
 	}
 
 	&-action {

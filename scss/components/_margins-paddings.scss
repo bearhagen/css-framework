@@ -20,7 +20,7 @@
 	}
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1101px) {
 	@mixin make_margins_paddings($property, $value:"") {
 		$sizes: ("small", "medium", "large");
 		$directions: ("t", "r", "b", "l", "tb", "rl", "trbl");

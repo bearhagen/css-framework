@@ -7,18 +7,17 @@
 
 /* ---------- General ---------- */
 
-html {
-	box-sizing: border-box;
-	position: relative;
-	min-height: 100%;
-}
-
 * {
 	&, &:before, &:after {
 		box-sizing: inherit;
 	}
 }
 
+html {
+	box-sizing: border-box;
+	position: relative;
+	min-height: 100%;
+}
 
 body {
 	color: $color-black;
@@ -95,6 +94,7 @@ img {
 @import 'components/_alignments.scss';
 @import 'components/_buttons.scss';
 @import 'components/_colors.scss';
+@import 'components/_columns.scss';
 @import 'components/_cards.scss';
 @import 'components/_footer.scss';
 @import 'components/_grid.scss';
@@ -107,11 +107,11 @@ img {
 @import 'components/_sizes.scss';
 @import 'components/_typography.scss';
 
+@media screen and (min-width: 1101px) {
+}
+
 @media screen and (max-width: 1100px) {
 }
 
 @media screen and (max-width: 480px)  {
-}
-
-@media print and (max-width: 1100px) {
 }

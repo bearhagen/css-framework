@@ -2,6 +2,11 @@
 
 .list {
 	line-height: 160%;
+	list-style: none;
+
+	&s {
+		@extend .list;
+	}
 
 	dt {
 		@extend bold, .m-small-t;
@@ -49,7 +54,7 @@
 	}
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1101px) {
 	.list {
 		&-bulleted { &-pushed { padding-left: $large; }}
 		&s { &-bulleted { &-pushed { ul, dl { padding-left: $large; }}}}

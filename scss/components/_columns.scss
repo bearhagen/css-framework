@@ -1,0 +1,93 @@
+	/* ---------- Columns ---------- */
+
+	.cols {
+		&-3, &-1-2, &-2, &-2-1 {
+			@extend .clearfix;
+		}
+	}
+
+	@media screen and (min-width: 1101px) {
+		.cols {
+			&-3, &-1-2, &-2, &-2-1 {
+				> * {
+					float: left;
+				}
+			}
+
+			&-3 {
+				> * {
+					width: 31.11113333333333%;
+
+					&:not(:first-child) {
+						margin-left: 3.3333%;
+					}
+				}
+			}
+
+			&-2 {
+				> * {
+					width: 48.33335%;
+
+					&:not(:first-child) {
+						margin-left: 3.3333%;
+					}
+				}
+
+				&-1 {
+					> * {
+						&:first-child {
+							width: 64.99995%;
+							margin-right: 1.66665%;
+						}
+
+						&:last-child {
+							width: 31.66665%;
+							margin-left: 1.66665%;
+						}
+					}
+				}
+			}
+			
+			&-1-2 {
+				> * {
+					&:first-child {
+						width: 31.66665%;
+						margin-right: 1.66665%;
+					}
+
+					&:last-child {
+						width: 64.99995%;
+						margin-left: 1.66665%;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 1100px)  {
+		.cols {
+			&-3, &-1-2, &-2, &-2-1 {
+				> * {
+					width: 75%;
+					margin: 0 auto;
+						
+					> * {
+						width: 100%;
+					}
+					
+					&:not(:first-child) {
+						margin-top: $medium;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px)  {
+		.cols {
+			&-3, &-1-2, &-2, &-2-1 {
+				> * {
+					width: 100%;
+				}
+			}
+		}
+	}
